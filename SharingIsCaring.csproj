@@ -76,7 +76,6 @@
     <Compile Include="src\Logic\HealthSync.cs" />
     <Compile Include="src\Logic\UpgradeSync.cs" />
     <Compile Include="src\Patches\ItemHealthPackPatch.cs" />
-    <Compile Include="src\Patches\PunManagerPatch.cs" />
     <Compile Include="src\Patches\UpgradeSyncPatches.cs" />
     <Compile Include="src\SharingIsCaring.cs" />
   </ItemGroup>

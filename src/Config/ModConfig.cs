@@ -16,13 +16,6 @@ namespace SharingIsCaring.Config
         public static ConfigEntry<bool> DebugLogging;
 
         // ────────────────────────────────
-        // Health Sync Settings
-        // ────────────────────────────────
-
-        public static ConfigEntry<float> HealMultiplier;
-        public static ConfigEntry<bool> RenameHealthItems;
-
-        // ────────────────────────────────
         // Upgrade Sync Filters
         // ────────────────────────────────
 
@@ -50,10 +43,6 @@ namespace SharingIsCaring.Config
             EnableUpgradeSync = config.Bind("General", "EnableUpgradeSync", true, "Enable syncing of upgrades across all players.");
             EnableHealthSync = config.Bind("General", "EnableHealthSync", true, "Enable team healing when using health packs.");
             DebugLogging = config.Bind("General", "DebugLogging", false, "If true, enables detailed logging for troubleshooting.");
-
-            // Health Sync
-            HealMultiplier = config.Bind("Health Sync", "HealMultiplier", 1.0f, "Multiplier applied to health pack healing.");
-            RenameHealthItems = config.Bind("Health Sync", "RenameItems", true, "If true, modifies health item names to show adjusted heal value.");
 
             // Upgrade Sync Categories
             SyncHealthUpgrades = config.Bind("Upgrade Sync", "SyncHealth", true, "Sync health-related upgrades.");

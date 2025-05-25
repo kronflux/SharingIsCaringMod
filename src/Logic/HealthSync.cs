@@ -20,7 +20,6 @@ namespace SharingIsCaring.Logic
             if (!PhotonNetwork.IsMasterClient || !ModConfig.EnableHealthSync.Value)
                 return;
 
-            int adjustedHeal = Mathf.CeilToInt(pack.healAmount * ModConfig.HealMultiplier.Value);
             List<PlayerAvatar> players = SemiFunc.PlayerGetAll();
             int healedCount = 0;
 
@@ -28,13 +27,13 @@ namespace SharingIsCaring.Logic
             {
                 if (player?.playerHealth != null)
                 {
-                    player.playerHealth.HealOther(adjustedHeal, true);
+                    avatar.playerHealth.HealOther(pack.healAmount, true);
                     healedCount++;
                 }
             }
 
             SharingIsCaringPlugin.Log.LogInfo(
-                $"Shared health pack used → healed {healedCount} player(s) for {adjustedHeal} HP.");
+                $"Shared health pack used (host-side) → healed {healedCount} player(s) for {pack.healAmount} HP.");
 
             if (ModConfig.DebugLogging.Value)
             {
