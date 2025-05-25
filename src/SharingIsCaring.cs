@@ -15,7 +15,7 @@ namespace SharingIsCaring
     {
         public const string PluginGUID = "FluxTeam.SharingIsCaring";
         public const string PluginName = "Sharing is Caring";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.1.0";
 
         /// <summary>Global log instance for all mod systems to use.</summary>
         internal static ManualLogSource Log;

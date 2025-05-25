@@ -7,7 +7,6 @@
 - ✅ Syncs upgrade values across all players — health, mobility, grab strength, and modded upgrades.
 - 📉 Shares healing effects from health packs with the whole team.
 - ↻ Configurable sync interval (default: 5 seconds).
-- 🛕️ Shop health items renamed to reflect adjusted heal values.
 - ⚙️ Lightweight, host-only operation for multiplayer sessions.
 - 🛠️ Fully configurable via BepInEx.
 
@@ -28,8 +27,6 @@ To compile the mod yourself:
    - `UnityEngine.CoreModule.dll`
    - `PhotonUnityNetworking.dll`
    - `PhotonRealtime.dll`
-   - `0Harmony.dll`
-   - `BepInEx.dll`
 3. Open the solution in **Visual Studio** (targeting **.NET Framework 4.8**).
 4. Build the project using the `Release` configuration.
 
@@ -51,10 +48,6 @@ EnableUpgradeSync = true
 EnableHealthSync = true
 DebugLogging = false
 
-[Health Sync]
-HealMultiplier = 1.0
-RenameItems = true
-
 [Upgrade Sync]
 SyncHealth = true
 SyncMobility = true
@@ -65,7 +58,7 @@ SyncInterval = 5.0
 
 ## Known Compatibility
 
-Works with mods that allow players to join mid-game. Will not sync upgrades in the Main Menu, Shop, or Arena. Upgrades are synced only in Lobby and active Missions.
+Works with mods that allow players to join mid-game. Will not sync upgrades in the Main Menu, Lobby Menu, Shop, or Arena. Upgrades are synced only in Lobby and active Missions.
 
 ## License
 
