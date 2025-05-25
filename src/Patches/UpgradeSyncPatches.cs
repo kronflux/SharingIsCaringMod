@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using SharingIsCaring.Config;
 using SharingIsCaring.Logic;
 
 namespace SharingIsCaring.Patches
@@ -12,6 +13,13 @@ namespace SharingIsCaring.Patches
     {
         static void Prefix()
         {
+            // Only sync if not in shop, not in arena, not in menu
+            if (SemiFunc.MenuLevel() || SemiFunc.RunIsLobbyMenu() || SemiFunc.RunIsShop() || SemiFunc.RunIsArena())
+            {
+                if (ModConfig.DebugLogging.Value)
+                    SharingIsCaringPlugin.Log.LogDebug("Skipped upgrade sync on level change (arena/shop/menu).");
+                return;
+            }
             UpgradeSync.ForceSync();
         }
     }
